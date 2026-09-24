@@ -1,0 +1,26 @@
+1. real mode:
+    how it start:
+    the first 512 bytes from the hard drive,
+    those bytes the legacy bios he into address memory 
+    0x7c00:
+        first byte:
+            low nibble: 0111 >> in hex 7
+            high nibble: 1101 >> in hex 'c'
+        secend byte:
+            low nibble: 0000 >> in hex 0
+            high nibble: 0000 >> in hex 0
+    and jump to there (0x7c00)
+    the cpu behaving now like he is a old cpu 8086,
+    you have only access to 1 MB of the memory
+
+    what can i do:
+        here you still allowed to use on "interrputs" of the bios like:
+        int 0x10
+        to print text to the display
+
+    What the code needs to do at this point:
+        Reset the Segment Registers (ds, es, ss) to 0.
+        Set up the Stack so you can use call and ret.
+        Read the rest of the bootloader/kernel code from disk (because 512 bytes is not enough
+         for the 64-bit transition). 
+        Enable the A20 line (a historical hack that allows access to memory beyond 1MB).

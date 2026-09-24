@@ -1,0 +1,20 @@
+real mode:
+    boot sector from 0x7c00 to 0x7dff
+    boot stack pointer(sp) [dynamic stack]: 0x7c00
+    boot base pointer(bp) [static stack]: 0x7c00
+
+main:
+    main ADDR: 0X7e00
+    main bits: 32x
+    
+    ask the user if he want 32 bits(
+        'y'-jmp to addr of stage2, after that jmp to addr of kernel32x.
+        'n'-jmp to addr of stage2, after that jmp to addr of stage3, after that jmp to addr of kernel64x
+        )
+    
+    protact mode:
+        kernel32x address: coming soon
+        kernel32x 32 bit stack pointer: 0x90000
+    long mode:
+        kernel64x address: coming soon
+        kernel64x 64 bit stack pointer: coming soon
