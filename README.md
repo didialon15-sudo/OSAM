@@ -1,2 +1,2 @@
 # OSAM
-this proyect made by Aon Didi
+This proyect made by Alon Didi
