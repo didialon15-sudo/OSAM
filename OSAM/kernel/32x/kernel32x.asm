@@ -3,7 +3,6 @@
 
 loading_idtr:;starts: 0x00009007 - 0x0000900e, 8 bytes
     lidt [idt_discriptor]
-    sti
 
 kernel_32_loop: ;starts:0x00009000
     int 0
