@@ -9,6 +9,7 @@ kernel_32_loop: ;starts:0x00009000
     jmp .hang
 
 .hang:
+    cli
     hlt
     jmp .hang
 
