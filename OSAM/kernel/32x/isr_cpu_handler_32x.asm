@@ -12,11 +12,8 @@ isr0:;divide by zero
     popad
 
     
-    jmp shutdown
-shutdown:
-    mov dx, 0x604   ; כתובת ה-Port של ACPI ב-QEMU
-    mov ax, 0x2000  ; פקודת הכיבוי (Shut down)
-    out dx, ax      ; שליחת הפקודה לחומרה הווירטואלית
+    jmp .hang
+
 .hang:
     cli
     hlt
