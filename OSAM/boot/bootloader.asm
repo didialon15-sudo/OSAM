@@ -19,7 +19,7 @@ _start:
 
     ;--- Load Sector 2 into RAM at 0x7E00 ---
     mov bx, GDT_OFFSET ; Target buffer offset
-    mov al, 1 ; Read 1 sector
+    mov al, 16 ; Read 1 sector
     mov ch, 0 ; Cylinder 0
     mov dh, 0 ; Head 0
     mov cl, 2 ; Sector 2
